@@ -1,4 +1,18 @@
-.login-button {
+.home-container {
+  width: 100%;
+  
+}
+
+.header-ad-link-1 {
+  width: 100%;
+  height: 30px;
+  background-color: #9DBFAF;
+  justify-content: center;
+  display: flex;
+  font-size: 20px;
+}
+
+.to-login {
   display: flex;
   justify-content: flex-end;
   margin: 20px;
@@ -7,9 +21,9 @@
 
 .nav-section {
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
-.hnm-logo {
+.CL-logo {
   width: 100px;
   height: 80px;
 }

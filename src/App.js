@@ -5,10 +5,10 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { Route, Routes } from 'react-router-dom';
 import Header from './component/Header';
-
-import ProductAll from './page/ProductAll';
 import Login from './page/Login';
 import ProductDetail from './page/ProductDetail';
+import Home from './page/Home';
+import Join from './page/Join';
 
 
 function App() {
@@ -21,13 +21,15 @@ function App() {
     }, []);
 
     return (
-        <div>
-            백엔드에서 가져온 데이터입니다 : {hello}
+        <div className='home-container'>
             <Header/>
+
             <Routes>
-                <Route path='/' element={<ProductAll/>}/>
+                <Route path='/' element={<Home/>}/>
                 <Route path='/login' element={<Login/>}/>
+                <Route path='/join' element={<Join/>}/>
                 <Route path='/product/:id' element={<ProductDetail/>}/>
+                
             </Routes>
         </div>
     );

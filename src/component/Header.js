@@ -1,30 +1,42 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faCoffee, faSearch, faUser} from "@fortawesome/free-solid-svg-icons"
+import {useLocation, useNavigate} from "react-router-dom"
 
 const Header = () => {
+  const locationNow = useLocation();  
+  const navigate = useNavigate();
+
+  const toLogin = () => {
+    navigate("/login");
+  }
   // navbar 항목 리스트
   const menuList = [
-                    '여성',
-                    'Divided',
-                    '남성',
-                    '신생아',
-                    '이동',
-                    'H&M Home',
-                    'Sale',
-                    '지속가능성'
-                  ];
-
+    'menu1',
+    'menu2',
+    'menu3',
+    'menu4',
+    'menu5',
+    'menu5',
+    'menu6'
+  ];
+  if (locationNow.pathname === "/login"
+    ||locationNow.pathname === "/join") {
+      return null;
+  }
   return (
     <div>
-      <div className='login-button'>
+      <div className='header-ad-link-1'>
+        <div>광고 자리입니다.</div>
+      </div>
+      <div className='to-login' onClick={toLogin}>
         <FontAwesomeIcon icon={faUser}/>
         <div>로그인</div>
       </div>
       <div className='nav-section'>
         <img
-           src={`${process.env.PUBLIC_URL}/image/hnm_logo.jpg`}
-           className='hnm-logo'
+           src={`${process.env.PUBLIC_URL}/image/CL_logo.jpg`}
+           className='CL-logo'
         />
       </div>
       <div className='menu-area'>
